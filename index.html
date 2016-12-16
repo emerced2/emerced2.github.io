@@ -1,46 +1,28 @@
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-<style>
-  body {background-color: rgb(107,107,71);
-    color: rgb(255,255,255);
-  }
+<script>
+    
+    function convertBinary() {
+    var output = document.getElementById("outputBinary");
+    var input = document.getElementById("inputBinary").value;
+    output.value = "";
+    for (i=0; i < input.length; i++) {var e=input[i].charCodeAt(0);var s = "";
+    do{
+        var a =e%2;
+        e=(e-a)/2;
+        s=a+s;
+        }while(e!=0);
+        while(s.length<8){s="0"+s;}
+        output.value+=s + " ";
+    }
+ }
+    
+</script>
+<center>
+    <span class="main">Binary Converter</span>
+    <br>
+    <input type="text" onkeyup="convertBinary()" id="inputBinary" class="inputBinary" placeholder="Text Here"/>
+    <br>
 
-  .size {width:800px;}
-</style>
-<div class="navbar navbar-default">
-<div class="container">
-<a href="https://emerced2.github.io" class="navbar-brand">Why I Shouldn't Be A Programmer</a>
-<div>
-  <ul class="nav navbar-nav">
-    <li>
-    <a href="#difficult">Difficult</a>
-    </li><li>
-    <a href="#hieroglyphics">Hieroglyphics</a>
-    </li><li>
-    <a href="#NTS">Not Tech Savvy</a>
-    </li><li>
-    <a href="#???">???</a>
-  </ul>
-</div>
-</div>
-</div>
-<div class="container-fluid">
-<h1 class="text-center">Why I Shouldn't be a Programmer</h1>
-<p class="text-center">A semi-comprehensive list I've compiled</p>
-<p class="text-center">of reasons Computer Science is not for me.</p>
-</div>
-<div class="container-fluid">
-  <h2 id="difficult" class="text-center">Difficult</h2>
-    <center><img class="size" src="https://i.kinja-img.com/gawker-media/image/upload/1014358974063045672.jpg" alt="difficult"></center>
-    <p class="text-center">Or challenging.</p>
-  <h2 id="hieroglyphics" class="text-center">Hieroglyphics</h2>
-    <center><img class="size" src="https://lh3.googleusercontent.com/H54YOtjXtVMr_Xmr2yfqSn5uTOLojJeD5Eve6UTKVOdluI6CKKe_zFrWqztOWAv0MtvIMlPdaOtsk1r5yoN6aL0r6c6okgWdmLsv8rMQELo_nldacnA" alt="hieroglyphics"></center>
-    <p class="text-center">It is a different language, sort of.</p>
-  <h2 id="NTS" class="text-center">Not tech savvy</h2>
-    <center><img class="size" src="https://i.kinja-img.com/gawker-media/image/upload/nkzqgqde0lvay3nwoxrg.png" alt="ERROR"></center>
-    <p class="text-center">But not exactly impossible.</p>
-  <h2 id="???" class="text-center">???</h2>
-    <center><img class="size" src="http://designdazzling.com/wp-content/uploads/2011/08/forced-perspective-photography81.jpg" alt="perspective"></center>
-    <p class="text-center">In the end, I think it's all about perspective.</p>
-  <h3 class="text-center">Or maybe it isn't, who knows?</h3>
-  <p>got any advice? Want to help a struggling intro student out? contact <a href="https://github.com/emerced2">Edwin</a>
-</div>
+    <br>
+    <input type="text" id="outputBinary" class="outputBinary" readonly />
+        
+</center>
