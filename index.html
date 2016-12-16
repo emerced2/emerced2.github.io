@@ -1,24 +1,25 @@
 <script>
-    
+
     function convertBinary() {
     var output = document.getElementById("outputBinary");
     var input = document.getElementById("inputBinary").value;
     output.value = "";
-    for (i=0; i < input.length; i++) {
-        var e=input[i].charCodeAt(0);
-        var s = "";
+    for (i = 0; i < input.length; i++) {
+      var e = input[i].charCodeAt(0);
+      var s = "";
     do{
-        var a =e%2;
-        e=(e-a)/2;
-        s=a+s;
+        var a = e % 2;
+        e = (e - a) / 2;
+        s = a + s;
         }
-        while(e!=0);
-        while(s.length<8){s="0"+s;}
-        output.value+=s + " ";
+        while (e != 0);
+        while (s.length < 8){s = "0" + s;}
+        output.value += s + " ";
     }
  }
-    
+
 </script>
+
 <style>
 input {
   font-size: 16px;
@@ -26,12 +27,12 @@ input {
   height: 75px;
 }
 </style>
+<div class = "container-fluid">
 <center>
-    <span class="main">Binary Converter</span>
+    <span class = "main">Text-to-Binary</span>
     <br>
-    <input type="text" onkeyup="convertBinary()" id="inputBinary" class="inputBinary" placeholder="Text Here"/>
+    <input type = "text" onkeyup = "convertBinary()" id = "inputBinary" class = "inputBinary" placeholder = "Text Here"/>
     <br>
-
     <br>
-    <input type="text" id="outputBinary" class="outputBinary" readonly />
+    <input type = "text" id = "outputBinary" class = "outputBinary" readonly />
 </center>
